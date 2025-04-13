@@ -1,0 +1,30 @@
+{
+  "name": "@pentiminax/ux-editor",
+  "description": "Editor.js integration for Symfony",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/controller.js",
+  "symfony": {
+    "controllers": {
+      "editor": {
+        "main": "dist/controller.js",
+        "webpackMode": "eager",
+        "fetch": "eager",
+        "enabled": true
+      }
+    },
+    "importmap": {
+      "@hotwired/stimulus": "^3.0.0",
+      "@editorjs/header": "^2.8.8"
+    }
+  },
+  "peerDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@editorjs/header": "^2.8.8"
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@editorjs/header": "^2.8.8"
+  }
+}

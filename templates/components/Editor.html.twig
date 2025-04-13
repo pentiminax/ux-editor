@@ -1,0 +1,9 @@
+<div {{ attributes.defaults(stimulus_controller('@pentiminax/ux-editor/editor')) }}
+        data-pentiminax--ux-editor--editor-view-value="{{ this.props|default([])|json_encode }}"
+>
+    <div id="editorjs" class="bg-light rounded-3"></div>
+
+    <div class="mt-3">
+        <button class="btn btn-primary" {{ stimulus_action('editor', 'save') }}>Save</button>
+    </div>
+</div>
