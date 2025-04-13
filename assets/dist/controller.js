@@ -1,5 +1,8 @@
 import { Controller } from '@hotwired/stimulus';
+import Checklist from '@editorjs/checklist'
 import Header from '@editorjs/header';
+import Quote from '@editorjs/quote';
+import Table from '@editorjs/table';
 
 class default_1 extends Controller {
     async connect() {
@@ -10,7 +13,10 @@ class default_1 extends Controller {
         const options = {
             data: data,
             tools: {
-                header: Header
+                checklist: Checklist,
+                header: Header,
+                quote: Quote,
+                table: Table,
             },
             ...payload
         };
@@ -26,6 +32,8 @@ class default_1 extends Controller {
 
     async save() {
         const data = await this.editor.save();
+
+        console.log(data);
 
         localStorage.setItem('editor', JSON.stringify(data));
     }
