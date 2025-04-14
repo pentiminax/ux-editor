@@ -1,4 +1,4 @@
-import { Controller } from '@hotwired/stimulus';
+import {Controller} from '@hotwired/stimulus';
 import Checklist from '@editorjs/checklist'
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
@@ -6,9 +6,9 @@ import Table from '@editorjs/table';
 
 class default_1 extends Controller {
     async connect() {
-        const data = await this.loadData();
-
         const payload = this.viewValue;
+
+        const data = await this.loadData(payload.dataUrl);
 
         const options = {
             data: data,
@@ -22,20 +22,41 @@ class default_1 extends Controller {
         };
 
         this.editor = new EditorJS(options);
+        this.saveDataUrl = payload.saveDataUrl || null;
     }
 
-    async loadData() {
-        const data = localStorage.getItem('editor');
+    async loadData(dataUrl) {
+        let data = {};
 
-        return data ? JSON.parse(data) : {};
+        if (dataUrl) {
+            const response = await fetch(dataUrl);
+
+            data = await response.json();
+        } else {
+            data = JSON.parse(localStorage.getItem('editorContent'));
+        }
+
+        return data;
     }
 
     async save() {
         const data = await this.editor.save();
 
-        console.log(data);
+        if (this.saveDataUrl) {
+            const response = await fetch(this.saveDataUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        localStorage.setItem('editor', JSON.stringify(data));
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+        } else {
+            localStorage.setItem('editorContent', JSON.stringify(data));
+        }
     }
 }
 

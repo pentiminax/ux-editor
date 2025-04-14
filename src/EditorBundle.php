@@ -9,6 +9,14 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class EditorBundle extends AbstractBundle
 {
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        $container->services()
+            ->load('Pentiminax\\UX\\Editor\\Repository\\', '../src/Repository/*')
+            ->autowire()
+            ->autoconfigure();
+    }
+
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         if (!$this->isAssetMapperAvailable($builder)) {
