@@ -2,7 +2,7 @@
         data-pentiminax--ux-editor--editor-view-value="{{ this.props|default([])|json_encode }}"
 >
     <div id="editorjs" class="bg-light rounded-3"></div>
-
+{% dump(this) %}
     <div class="mt-3">
         <button class="btn btn-primary" {{ stimulus_action('@pentiminax/ux-editor/editor', 'save') }}>Save</button>
     </div>

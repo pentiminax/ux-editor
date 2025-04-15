@@ -8,7 +8,7 @@ class default_1 extends Controller {
     async connect() {
         const payload = this.viewValue;
 
-        const data = await this.loadData(payload.dataUrl);
+        const data = await this.loadData(payload);
 
         const options = {
             data: data,
@@ -25,15 +25,18 @@ class default_1 extends Controller {
         this.saveDataUrl = payload.saveDataUrl || null;
     }
 
-    async loadData(dataUrl) {
+    async loadData(payload) {
         let data = {};
 
-        if (dataUrl) {
+        if (payload['dataUrl']) {
             const response = await fetch(dataUrl);
 
             data = await response.json();
+        } else if (payload['blocks']) {
+            let blocks = JSON.parse(payload['blocks']);
+            data = { blocks: blocks };
         } else {
-            data = JSON.parse(localStorage.getItem('editorContent'));
+            data = JSON.parse(localStorage.getItem('editorContent')) || {};
         }
 
         return data;
