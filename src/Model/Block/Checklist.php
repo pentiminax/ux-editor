@@ -3,21 +3,21 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Enum\HeaderLevel;
-use Pentiminax\UX\Editor\Model\Data\HeaderData;
+use Pentiminax\UX\Editor\Model\Data\ChecklistData;
+use Pentiminax\UX\Editor\Model\Data\ChecklistItem;
 
-class Header extends AbstractBlock
+class Checklist extends AbstractBlock
 {
-    public static function new(string $text, HeaderLevel $level): static
+    public static function new(ChecklistItem ...$items): static
     {
         return new static(
-            new HeaderData($text, $level)
+            new ChecklistData(...$items)
         );
     }
 
     public function getType(): BlockType
     {
-        return BlockType::HEADER;
+        return BlockType::CHECKLIST;
     }
 
     public function jsonSerialize(): array

@@ -16,8 +16,6 @@ abstract class AbstractBlock implements \JsonSerializable
         $this->data = $data;
     }
 
-    abstract public static function new(mixed $data): AbstractBlock;
-
     abstract public function getType(): BlockType;
 
     public function getId(): string

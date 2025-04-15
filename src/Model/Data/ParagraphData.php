@@ -2,13 +2,12 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-class ParagraphData implements \JsonSerializable
+readonly class ParagraphData implements \JsonSerializable
 {
-    public string $text;
+    public function __construct(
+        private string $text
+    ) {
 
-    public function __construct(string $text)
-    {
-        $this->text = $text;
     }
 
     public function jsonSerialize(): array

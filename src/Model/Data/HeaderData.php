@@ -6,8 +6,11 @@ use Pentiminax\UX\Editor\Enum\HeaderLevel;
 
 class HeaderData implements \JsonSerializable
 {
-    private string $text;
-    private HeaderLevel $level;
+    public function __construct(
+        private readonly string $text,
+        private readonly HeaderLevel $level
+    ) {
+    }
 
     public function jsonSerialize(): array
     {

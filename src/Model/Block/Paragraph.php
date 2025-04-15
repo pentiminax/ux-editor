@@ -7,17 +7,11 @@ use Pentiminax\UX\Editor\Model\Data\ParagraphData;
 
 class Paragraph extends AbstractBlock
 {
-    public function getData(): mixed
+    public static function new(string $text): static
     {
-        return $this->data;
-    }
-
-    /**
-     * @param string $data
-     */
-    public static function new(mixed $data): AbstractBlock
-    {
-        return new static(new ParagraphData($data));
+        return new static(
+            new ParagraphData($text)
+        );
     }
 
     public function getType(): BlockType
