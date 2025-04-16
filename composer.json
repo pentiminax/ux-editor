@@ -28,9 +28,8 @@
         "symfony/config": "^7.0",
         "symfony/dependency-injection": "^7.0",
         "symfony/http-kernel": "^7.0",
-        "symfony/orm-pack": "dev-main",
-        "symfony/stimulus-bundle": "^2.22",
-        "symfony/twig-bundle": "^7.0"
+        "symfony/orm-pack": "^2.4.1",
+        "symfony/stimulus-bundle": "^2.22"
     },
     "conflict": {
         "symfony/flex": "<1.13"
@@ -46,6 +45,7 @@
     },
     "minimum-stability": "dev",
     "require-dev": {
-        "symfony/maker-bundle": "^1.62.1"
+        "symfony/maker-bundle": "^1.62.1",
+        "symfony/twig-bundle": "^7.0"
     }
 }
