@@ -3,8 +3,9 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
+use Pentiminax\UX\Editor\Model\Data\BlockDataInterface;
 
-abstract class AbstractBlock implements \JsonSerializable
+abstract class AbstractBlock implements BlockInterface, \JsonSerializable
 {
     protected string $id;
 
@@ -18,7 +19,7 @@ abstract class AbstractBlock implements \JsonSerializable
 
     abstract public function getType(): BlockType;
 
-    public function getData()
+    public function getData(): BlockDataInterface
     {
         return $this->data;
     }

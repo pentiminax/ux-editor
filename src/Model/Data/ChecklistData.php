@@ -2,7 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-readonly class ChecklistData implements \JsonSerializable
+readonly class ChecklistData implements BlockDataInterface, \JsonSerializable
 {
     /** @var ChecklistItem[]  */
     public array $items;

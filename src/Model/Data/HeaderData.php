@@ -4,7 +4,7 @@ namespace Pentiminax\UX\Editor\Model\Data;
 
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 
-class HeaderData implements \JsonSerializable
+class HeaderData implements BlockDataInterface, \JsonSerializable
 {
     public function __construct(
         public readonly string $text,

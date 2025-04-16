@@ -7,7 +7,7 @@ use Pentiminax\UX\Editor\Enum\EmbedService;
 use function preg_match;
 use function sprintf;
 
-class EmbedData implements \JsonSerializable
+class EmbedData implements BlockDataInterface, \JsonSerializable
 {
     public function __construct(
         public string $caption,

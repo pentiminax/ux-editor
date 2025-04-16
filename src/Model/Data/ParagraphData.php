@@ -2,7 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-readonly class ParagraphData implements \JsonSerializable
+readonly class ParagraphData implements BlockDataInterface, \JsonSerializable
 {
     public function __construct(
         public string $text
