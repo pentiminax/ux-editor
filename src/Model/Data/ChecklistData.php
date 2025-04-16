@@ -2,8 +2,6 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-use function array_map;
-
 class ChecklistData implements \JsonSerializable
 {
     /** @var ChecklistItem[]  */

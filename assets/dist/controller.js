@@ -1,5 +1,6 @@
 import {Controller} from '@hotwired/stimulus';
 import Checklist from '@editorjs/checklist'
+import Embed from '@editorjs/embed'
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
 import Table from '@editorjs/table';
@@ -14,6 +15,7 @@ class default_1 extends Controller {
             data: data,
             tools: {
                 checklist: Checklist,
+                embed: Embed,
                 header: Header,
                 quote: Quote,
                 table: Table,

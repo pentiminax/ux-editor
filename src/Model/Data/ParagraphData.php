@@ -7,7 +7,6 @@ readonly class ParagraphData implements \JsonSerializable
     public function __construct(
         private string $text
     ) {
-
     }
 
     public function jsonSerialize(): array
