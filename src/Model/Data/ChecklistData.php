@@ -2,10 +2,10 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-class ChecklistData implements \JsonSerializable
+readonly class ChecklistData implements \JsonSerializable
 {
     /** @var ChecklistItem[]  */
-    private array $items;
+    public array $items;
 
     public function __construct(ChecklistItem ...$items)
     {

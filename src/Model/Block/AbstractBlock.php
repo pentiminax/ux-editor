@@ -18,9 +18,23 @@ abstract class AbstractBlock implements \JsonSerializable
 
     abstract public function getType(): BlockType;
 
+    public function getData()
+    {
+        return $this->data;
+    }
+
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'id' => $this->id,
+            'type' => $this->getType()->value,
+            'data' => $this->getData()
+        ];
     }
 
     private static function generateBlockId(): string

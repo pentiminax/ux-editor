@@ -2,6 +2,8 @@
 
 namespace Pentiminax\UX\Editor\Model;
 
+use Pentiminax\UX\Editor\MarkdownConverter;
+
 class Editor
 {
     private array $options = [];
@@ -36,5 +38,10 @@ class Editor
     public function getOptions(): array
     {
         return $this->options;
+    }
+
+    public function toMarkdown(): string
+    {
+        return MarkdownConverter::convertToMarkdown($this->options['data']['blocks']);
     }
 }

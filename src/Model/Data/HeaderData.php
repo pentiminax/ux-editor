@@ -7,8 +7,8 @@ use Pentiminax\UX\Editor\Enum\HeaderLevel;
 class HeaderData implements \JsonSerializable
 {
     public function __construct(
-        private readonly string $text,
-        private readonly HeaderLevel $level
+        public readonly string $text,
+        public readonly HeaderLevel $level
     ) {
     }
 

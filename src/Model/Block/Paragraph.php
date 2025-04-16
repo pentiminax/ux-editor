@@ -18,13 +18,4 @@ class Paragraph extends AbstractBlock
     {
         return BlockType::PARAGRAPH;
     }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'id' => $this->id,
-            'type' => $this->getType()->value,
-            'data' => $this->data
-        ];
-    }
 }

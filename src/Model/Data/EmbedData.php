@@ -10,11 +10,11 @@ use function sprintf;
 class EmbedData implements \JsonSerializable
 {
     public function __construct(
-        private string $caption,
-        private string $embed,
-        private int $height,
-        private EmbedService $service,
-        private int $width
+        public string $caption,
+        public string $embed,
+        public int $height,
+        public EmbedService $service,
+        public int $width
     ) {
         $this->embed = match ($this->service) {
             EmbedService::GITHUB => $this->handleGithubGistEmbed($this->embed),
