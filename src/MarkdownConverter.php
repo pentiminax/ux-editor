@@ -5,7 +5,6 @@ namespace Pentiminax\UX\Editor;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\Block\AbstractBlock;
 use Pentiminax\UX\Editor\Model\Data\ChecklistItem;
-use Pentiminax\UX\Editor\Model\Data\EmbedData;
 use Pentiminax\UX\Editor\Model\Data\HeaderData;
 use Pentiminax\UX\Editor\Model\Data\ParagraphData;
 
