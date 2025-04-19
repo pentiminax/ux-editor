@@ -1,8 +1,8 @@
 <?php
 
-namespace Pentiminax\UX\Editor\Model\Data;
+namespace Pentiminax\UX\Editor\Model\BlockData;
 
-final readonly class ChecklistItem implements BlockDataInterface, \JsonSerializable
+readonly class ChecklistItem implements BlockDataInterface, \JsonSerializable
 {
 
     private function __construct(

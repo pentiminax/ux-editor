@@ -3,7 +3,7 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Model\Data\TableData;
+use Pentiminax\UX\Editor\Model\BlockData\TableData;
 
 class Table extends AbstractBlock
 {

@@ -15,22 +15,32 @@ class default_1 extends Controller {
 
         const payload = this.viewValue;
 
-        console.log(payload);
-
         const data = await this.loadData(payload);
 
         const options = {
             data: data,
-            tools: {
-                checklist: Checklist,
-                embed: Embed,
-                header: Header,
-                list: EditorjsList,
-                quote: Quote,
-                table: Table,
-            },
-            ...payload
+            tools: {},
+            ...payload,
         };
+
+        if (payload.checklist) {
+            options.tools.checklist = {
+                class: Checklist,
+            }
+        }
+
+        if (payload.embed) {
+            options.tools.embed = {
+                class: Embed,
+            }
+        }
+
+        if (payload.header) {
+            options.tools.header = {
+                class: Header,
+                ...payload.header
+            }
+        }
 
         if (payload.image) {
             options.tools.image = {
@@ -39,7 +49,26 @@ class default_1 extends Controller {
             }
         }
 
-        console.log(options);
+        if (payload.list) {
+            options.tools.list = {
+                class: EditorjsList,
+                ...payload.list
+            }
+        }
+
+        if (payload.quote) {
+            options.tools.quote = {
+                class: Quote,
+                ...payload.quote
+            }
+        }
+
+        if (payload.table) {
+            options.tools.table = {
+                class: Table,
+                ...payload.table
+            }
+        }
 
         this.editor = new EditorJS(options);
         this.saveDataUrl = payload.saveDataUrl || null;

@@ -31,6 +31,12 @@
         "symfony/orm-pack": "^2.4.1",
         "symfony/stimulus-bundle": "^2.22"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5.17",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/maker-bundle": "^1.62.1",
+        "symfony/phpunit-bridge": "^7.0"
+    },
     "conflict": {
         "symfony/flex": "<1.13"
     },
@@ -43,9 +49,5 @@
             "url": "https://github.com/symfony/ux"
         }
     },
-    "minimum-stability": "dev",
-    "require-dev": {
-        "symfony/maker-bundle": "^1.62.1",
-        "symfony/twig-bundle": "^7.0"
-    }
+    "minimum-stability": "dev"
 }

@@ -4,8 +4,8 @@ namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\ListStyle;
-use Pentiminax\UX\Editor\Model\Data\ListData;
-use Pentiminax\UX\Editor\Model\Data\ListItem;
+use Pentiminax\UX\Editor\Model\BlockData\ListData;
+use Pentiminax\UX\Editor\Model\BlockData\ListItem;
 
 class UnorderedList extends AbstractBlock
 {

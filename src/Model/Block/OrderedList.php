@@ -5,9 +5,9 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\ListCounterType;
 use Pentiminax\UX\Editor\Enum\ListStyle;
-use Pentiminax\UX\Editor\Model\Data\ListData;
-use Pentiminax\UX\Editor\Model\Data\ListItem;
-use Pentiminax\UX\Editor\Model\Data\ListMeta;
+use Pentiminax\UX\Editor\Model\BlockData\ListData;
+use Pentiminax\UX\Editor\Model\BlockData\ListItem;
+use Pentiminax\UX\Editor\Model\BlockData\ListMeta;
 
 class OrderedList extends AbstractBlock
 {

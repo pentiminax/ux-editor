@@ -3,7 +3,7 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Model\Data\ParagraphData;
+use Pentiminax\UX\Editor\Model\BlockData\ParagraphData;
 
 class Paragraph extends AbstractBlock
 {

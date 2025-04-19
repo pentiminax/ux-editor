@@ -3,7 +3,10 @@
 namespace Pentiminax\UX\Editor\Model;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\MarkdownConverter;
+use Pentiminax\UX\Editor\Enum\EmbedService;
+use Pentiminax\UX\Editor\Enum\HeaderLevel;
+use Pentiminax\UX\Editor\Enum\ListStyle;
+use Pentiminax\UX\Editor\Model\Block\BlockInterface;
 
 class Editor
 {
@@ -29,6 +32,13 @@ class Editor
     public function autofocus(bool $autofocus): static
     {
         $this->options['autofocus'] = $autofocus;
+
+        return $this;
+    }
+
+    public function addBlock(BlockInterface $block): static
+    {
+        $this->options['data']['blocks'][] = $block;
 
         return $this;
     }
@@ -108,9 +118,46 @@ class Editor
         return $this->options;
     }
 
-    public function toMarkdown(): string
+    public function withDefaultTools(): static
     {
-        return MarkdownConverter::convertToMarkdown($this->options['data']['blocks']);
+        $this->withEmbedTool();
+        $this->withHeaderTool();
+        $this->withChecklistTool();
+        $this->withQuoteTool();
+        $this->withListTool();
+        $this->withTableTool();
+
+        return $this;
+    }
+
+    public function withChecklistTool(): static
+    {
+        $this->options['checklist'] = true;
+
+        return $this;
+    }
+
+    public function withEmbedTool(): static
+    {
+        $this->options['embed'] = true;
+
+        return $this;
+    }
+
+    /**
+     * @param HeaderLevel[] $levels
+     */
+    public function withHeaderTool(string $placeholder = '', array $levels = [], HeaderLevel $defaultLevel = HeaderLevel::H1): static
+    {
+        $this->options['header'] = [
+            'config' => [
+                'placeholder' => $placeholder,
+                'levels' => array_map(fn (HeaderLevel $level) => $level->value, $levels),
+                'defaultLevel' => $defaultLevel->value,
+            ]
+        ];
+
+        return $this;
     }
 
     public function withImageTool(string $byFileEndpoint, ?string $byUrlEndpoint = null): static
@@ -121,6 +168,47 @@ class Editor
                     'byFile' => $byFileEndpoint,
                     'byUrl' => $byUrlEndpoint
                 ]
+            ]
+        ];
+
+        return $this;
+    }
+
+    public function withListTool(ListStyle $defaultStyle = ListStyle::UNORDERED): static
+    {
+        $this->options['list'] = [
+            'config' => [
+                'defaultStyle' => $defaultStyle->value,
+            ]
+        ];
+
+        return $this;
+    }
+
+    public function withQuoteTool(string $quotePlaceholder = '', string $captionPlaceholder = ''): static
+    {
+        $this->options['quote'] = [
+            'config' => [
+                'quotePlaceholder' => $quotePlaceholder,
+                'captionPlaceholder' => $captionPlaceholder,
+            ]
+        ];
+
+        return $this;
+    }
+
+    public function withTableTool(
+        int $rows = 2,
+        int $cols = 2,
+        int $maxRows = 5,
+        int $maxCols = 5,
+    ): static {
+        $this->options['table'] = [
+            'config' => [
+                'rows' => $rows,
+                'cols' => $cols,
+                'maxRows' => $maxRows,
+                'maxCols' => $maxCols,
             ]
         ];
 

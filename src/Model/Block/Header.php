@@ -4,7 +4,7 @@ namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
-use Pentiminax\UX\Editor\Model\Data\HeaderData;
+use Pentiminax\UX\Editor\Model\BlockData\HeaderData;
 
 class Header extends AbstractBlock
 {

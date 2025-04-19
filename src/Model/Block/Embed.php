@@ -4,7 +4,7 @@ namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\EmbedService;
-use Pentiminax\UX\Editor\Model\Data\EmbedData;
+use Pentiminax\UX\Editor\Model\BlockData\EmbedData;
 
 class Embed extends AbstractBlock
 {

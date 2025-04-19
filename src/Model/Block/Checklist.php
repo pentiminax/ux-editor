@@ -3,8 +3,8 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Model\Data\ChecklistData;
-use Pentiminax\UX\Editor\Model\Data\ChecklistItem;
+use Pentiminax\UX\Editor\Model\BlockData\ChecklistData;
+use Pentiminax\UX\Editor\Model\BlockData\ChecklistItem;
 
 class Checklist extends AbstractBlock
 {

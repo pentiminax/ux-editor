@@ -3,7 +3,7 @@
 namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Model\Data\ImageData;
+use Pentiminax\UX\Editor\Model\BlockData\ImageData;
 
 class Image extends AbstractBlock
 {

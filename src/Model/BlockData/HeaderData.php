@@ -1,6 +1,6 @@
 <?php
 
-namespace Pentiminax\UX\Editor\Model\Data;
+namespace Pentiminax\UX\Editor\Model\BlockData;
 
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 
