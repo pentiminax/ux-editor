@@ -11,7 +11,7 @@ abstract class AbstractBlock implements BlockInterface, \JsonSerializable
 
     protected mixed $data;
 
-    public function __construct(mixed $data)
+    public function __construct(BlockDataInterface $data)
     {
         $this->id = self::generateBlockId();
         $this->data = $data;
