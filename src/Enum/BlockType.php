@@ -10,4 +10,5 @@ enum BlockType: string
     case IMAGE = 'image';
     case LIST = 'list';
     case PARAGRAPH = 'paragraph';
+    case TABLE = 'table';
 }
