@@ -34,4 +34,20 @@ class EditorTest extends TestCase
             'readOnly' => true,
         ], $editor->getOptions());
     }
+
+    public function testEditorWithDefaultTools(): void
+    {
+        $editor = (new Editor())
+            ->withDefaultTools()
+        ;
+
+        $options = $editor->getOptions();
+
+        $this->assertArrayHasKey('embed', $options);
+        $this->assertArrayHasKey('header', $options);
+        $this->assertArrayHasKey('checklist', $options);
+        $this->assertArrayHasKey('quote', $options);
+        $this->assertArrayHasKey('list', $options);
+        $this->assertArrayHasKey('table', $options);
+    }
 }
