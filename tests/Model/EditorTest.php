@@ -21,7 +21,6 @@ class EditorTest extends TestCase
             ->readonly(true)
         ;
 
-
         $this->assertSame([
             'autofocus' => true,
             'data' => [
@@ -32,7 +31,7 @@ class EditorTest extends TestCase
             'inlineToolbar' => true,
             'minHeight' => 100,
             'holder' => 'holderId',
-            'readonly' => true,
+            'readOnly' => true,
         ], $editor->getOptions());
     }
 }
