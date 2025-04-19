@@ -18,6 +18,8 @@
       "@editorjs/checklist": "^1.6.0",
       "@editorjs/embed": "^2.7.6",
       "@editorjs/header": "^2.8.8",
+      "@editorjs/image": "^2.10.2",
+      "@editorjs/list": "^2.0.6",
       "@editorjs/quote": "^2.7.6",
       "@editorjs/table": "^2.4.4",
       "@hotwired/stimulus": "^3.0.0"
@@ -27,6 +29,8 @@
     "@editorjs/checklist": "^1.6.0",
     "@editorjs/embed": "^2.7.6",
     "@editorjs/header": "^2.8.8",
+    "@editorjs/image": "^2.10.2",
+    "@editorjs/list": "^2.0.6",
     "@editorjs/quote": "^2.7.6",
     "@editorjs/table": "^2.4.4",
     "@hotwired/stimulus": "^3.0.0"
@@ -35,6 +39,8 @@
     "@editorjs/checklist": "^1.6.0",
     "@editorjs/embed": "^2.7.6",
     "@editorjs/header": "^2.8.8",
+    "@editorjs/image": "^2.10.2",
+    "@editorjs/list": "^2.0.6",
     "@editorjs/quote": "^2.7.6",
     "@editorjs/table": "^2.4.4",
     "@hotwired/stimulus": "^3.0.0"

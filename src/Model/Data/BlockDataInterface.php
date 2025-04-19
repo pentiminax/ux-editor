@@ -2,7 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Model\Data;
 
-interface BlockDataInterface
+interface BlockDataInterface extends \JsonSerializable
 {
 
 }

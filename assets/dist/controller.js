@@ -2,12 +2,20 @@ import {Controller} from '@hotwired/stimulus';
 import Checklist from '@editorjs/checklist'
 import Embed from '@editorjs/embed'
 import Header from '@editorjs/header';
+import Image from '@editorjs/image';
+import EditorjsList from '@editorjs/list';
 import Quote from '@editorjs/quote';
 import Table from '@editorjs/table';
 
 class default_1 extends Controller {
     async connect() {
+        window.addEventListener('beforeunload', async (e) => {
+            await this.save();
+        });
+
         const payload = this.viewValue;
+
+        console.log(payload);
 
         const data = await this.loadData(payload);
 
@@ -17,11 +25,21 @@ class default_1 extends Controller {
                 checklist: Checklist,
                 embed: Embed,
                 header: Header,
+                list: EditorjsList,
                 quote: Quote,
                 table: Table,
             },
             ...payload
         };
+
+        if (payload.image) {
+            options.tools.image = {
+                class: Image,
+                ...payload.image
+            }
+        }
+
+        console.log(options);
 
         this.editor = new EditorJS(options);
         this.saveDataUrl = payload.saveDataUrl || null;

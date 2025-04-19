@@ -112,4 +112,18 @@ class Editor
     {
         return MarkdownConverter::convertToMarkdown($this->options['data']['blocks']);
     }
+
+    public function withImageTool(string $byFileEndpoint, ?string $byUrlEndpoint = null): static
+    {
+        $this->options['image'] = [
+            'config' => [
+                'endpoints' => [
+                    'byFile' => $byFileEndpoint,
+                    'byUrl' => $byUrlEndpoint
+                ]
+            ]
+        ];
+
+        return $this;
+    }
 }
