@@ -99,6 +99,20 @@ class Editor
         return $this;
     }
 
+    public function loadDataUrl(string $loadDataUrl): static
+    {
+        $this->options['loadDataUrl'] = $loadDataUrl;
+
+        return $this;
+    }
+
+    public function saveDataUrl(string $saveDataUrl): static
+    {
+        $this->options['saveDataUrl'] = $saveDataUrl;
+
+        return $this;
+    }
+
     public function getId(): string
     {
         return $this->id;

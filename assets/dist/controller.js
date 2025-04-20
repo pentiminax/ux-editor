@@ -35,6 +35,8 @@ class default_1 extends Controller {
             config: payload
         });
 
+        this.loadDataUrl = payload.loadDataUrl || null;
+
         const data = await this.loadData(payload);
 
         const options = {
@@ -140,8 +142,8 @@ class default_1 extends Controller {
     async loadData(payload) {
         let data = {};
 
-        if (payload['dataUrl']) {
-            const response = await fetch(dataUrl);
+        if (this.loadDataUrl) {
+            const response = await fetch(this.loadDataUrl);
 
             data = await response.json();
         } else if (payload['blocks']) {
