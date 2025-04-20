@@ -15,8 +15,11 @@ If you\'re using WebpackEncore, install your assets and restart Encore
 ``` terminal
 npm install --force
 npm run watch
+```
 
-# or use yarn
+Or use yarn
+
+``` terminal
 yarn install --force
 yarn watch
 ```
