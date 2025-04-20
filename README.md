@@ -18,11 +18,11 @@ composer require pentiminax/ux-editor
 ```
 ## Supported Blocks
 
-The following Editor.js blocks are currently supported or planned:
+The following Editor.js blocks are supported:
 
 - [x] Checklist  
 - [x] Code  
-- [ ] Delimiter  
+- [X] Delimiter  
 - [x] Embed (GitHub, Twitter, YouTube)  
 - [x] Header  
 - [x] Image (with file upload support)  

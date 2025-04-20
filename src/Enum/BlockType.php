@@ -6,6 +6,7 @@ enum BlockType: string
 {
     case CHECKLIST = 'checklist';
     case CODE = 'code';
+    case DELIMITER = 'delimiter';
     case EMBED = 'embed';
     case HEADER = 'header';
     case IMAGE = 'image';

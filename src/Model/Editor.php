@@ -129,6 +129,7 @@ class Editor
     public function withDefaultTools(): static
     {
         $this->withCodeTool();
+        $this->withDelimiterTool();
         $this->withEmbedTool();
         $this->withHeaderTool();
         $this->withChecklistTool();
@@ -153,6 +154,13 @@ class Editor
     public function withCodeTool(): static
     {
         $this->options['code'] = true;
+
+        return $this;
+    }
+
+    public function withDelimiterTool(): static
+    {
+        $this->options['delimiter'] = true;
 
         return $this;
     }

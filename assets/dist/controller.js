@@ -1,6 +1,7 @@
 import {Controller} from '@hotwired/stimulus';
 import Checklist from '@editorjs/checklist'
 import Code from '@editorjs/code'
+import Delimiter from '@editorjs/delimiter'
 import Embed from '@editorjs/embed'
 import Header from '@editorjs/header';
 import Image from '@editorjs/image';
@@ -61,6 +62,10 @@ class default_1 extends Controller {
 
         if (payload.code) {
             options.tools.code = Code;
+        }
+
+        if (payload.delimiter) {
+            options.tools.delimiter = Delimiter;
         }
 
         if (payload.embed) {
