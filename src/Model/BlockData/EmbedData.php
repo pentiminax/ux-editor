@@ -10,15 +10,15 @@ class EmbedData implements BlockDataInterface
 {
     public function __construct(
         public string $caption,
-        public string $embed,
+        public string $url,
         public int $height,
         public EmbedService $service,
         public int $width
     ) {
-        $this->embed = match ($this->service) {
-            EmbedService::GITHUB => $this->handleGithubGistEmbed($this->embed),
-            EmbedService::YOUTUBE => $this->handleYouTubeEmbed($this->embed),
-            EmbedService::TWITTER => $this->handleTwitterEmbed($this->embed),
+        $this->url = match ($this->service) {
+            EmbedService::GITHUB => $this->handleGithubGistEmbed($this->url),
+            EmbedService::YOUTUBE => $this->handleYouTubeEmbed($this->url),
+            EmbedService::TWITTER => $this->handleTwitterEmbed($this->url),
         };
     }
 
@@ -26,7 +26,7 @@ class EmbedData implements BlockDataInterface
     {
         return [
             'caption' => $this->caption,
-            'embed' => $this->embed,
+            'embed' => $this->url,
             'height' => $this->height,
             'service' => $this->service->value,
             'width' => $this->width

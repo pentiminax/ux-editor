@@ -8,10 +8,10 @@ use Pentiminax\UX\Editor\Model\BlockData\EmbedData;
 
 class Embed extends AbstractBlock
 {
-    public static function new(string $caption, string $embed, int $height, EmbedService $service, int $width): static
+    public static function new(string $caption, string $url, int $height, EmbedService $service, int $width): static
     {
         return new static(
-            new EmbedData($caption, $embed, $height, $service, $width)
+            new EmbedData($caption, $url, $height, $service, $width)
         );
     }
 
