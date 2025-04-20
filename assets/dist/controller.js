@@ -4,6 +4,7 @@ import Code from '@editorjs/code'
 import Embed from '@editorjs/embed'
 import Header from '@editorjs/header';
 import Image from '@editorjs/image';
+import InlineCode from '@editorjs/inline-code';
 import EditorjsList from '@editorjs/list';
 import Quote from '@editorjs/quote';
 import Table from '@editorjs/table';
@@ -62,6 +63,10 @@ class default_1 extends Controller {
                 class: Image,
                 ...payload.image
             }
+        }
+
+        if (payload.inlineCode) {
+            options.tools.inlineCode = InlineCode;
         }
 
         if (payload.list) {

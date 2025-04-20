@@ -9,6 +9,7 @@ enum BlockType: string
     case EMBED = 'embed';
     case HEADER = 'header';
     case IMAGE = 'image';
+    case INLINE_CODE = 'inline_code';
     case LIST = 'list';
     case PARAGRAPH = 'paragraph';
     case TABLE = 'table';

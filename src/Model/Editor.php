@@ -125,6 +125,7 @@ class Editor
         $this->withChecklistTool();
         $this->withQuoteTool();
         $this->withListTool();
+        $this->withInlineCodeTool();
         $this->withTableTool();
 
         return $this;
@@ -177,6 +178,13 @@ class Editor
                 ]
             ]
         ];
+
+        return $this;
+    }
+
+    public function withInlineCodeTool(): static
+    {
+        $this->options['inlineCode'] = true;
 
         return $this;
     }
