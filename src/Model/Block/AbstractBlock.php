@@ -9,9 +9,9 @@ abstract class AbstractBlock implements BlockInterface, \JsonSerializable
 {
     protected string $id;
 
-    protected mixed $data;
+    protected BlockDataInterface $data;
 
-    public function __construct(BlockDataInterface $data)
+    protected function __construct(BlockDataInterface $data)
     {
         $this->id = self::generateBlockId();
         $this->data = $data;

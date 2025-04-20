@@ -8,12 +8,26 @@ import Quote from '@editorjs/quote';
 import Table from '@editorjs/table';
 
 class default_1 extends Controller {
+    constructor() {
+        super(...arguments);
+
+        this.editor = null;
+        this.isEditorInitialized = false;
+    }
     async connect() {
+        if (this.isEditorInitialized) {
+            return;
+        }
+
         window.addEventListener('beforeunload', async (e) => {
             await this.save();
         });
 
         const payload = this.viewValue;
+
+        this.dispatchEvent('pre-connect', {
+            config: payload
+        });
 
         const data = await this.loadData(payload);
 
@@ -72,6 +86,19 @@ class default_1 extends Controller {
 
         this.editor = new EditorJS(options);
         this.saveDataUrl = payload.saveDataUrl || null;
+
+        this.dispatchEvent('connect', {
+            editor: this.editor
+        });
+
+        this.isEditorInitialized = true;
+    }
+
+    dispatchEvent(name, payload) {
+        this.dispatch(name, {
+            detail: payload,
+            prefix: 'datatables'
+        });
     }
 
     async loadData(payload) {
@@ -111,6 +138,7 @@ class default_1 extends Controller {
         }
     }
 }
+
 
 default_1.values = {
     view: Object,

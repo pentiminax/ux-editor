@@ -25,6 +25,7 @@
         }
     },
     "require": {
+        "ext-bcmath": "*",
         "php": ">=8.2",
         "symfony/config": "^7.0",
         "symfony/dependency-injection": "^7.0",

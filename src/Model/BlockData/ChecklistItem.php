@@ -2,7 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Model\BlockData;
 
-readonly class ChecklistItem implements BlockDataInterface, \JsonSerializable
+readonly class ChecklistItem implements BlockDataInterface
 {
 
     private function __construct(
