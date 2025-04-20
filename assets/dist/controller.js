@@ -6,6 +6,7 @@ import Header from '@editorjs/header';
 import Image from '@editorjs/image';
 import InlineCode from '@editorjs/inline-code';
 import EditorjsList from '@editorjs/list';
+import Marker from '@editorjs/marker';
 import Quote from '@editorjs/quote';
 import Table from '@editorjs/table';
 
@@ -74,6 +75,10 @@ class default_1 extends Controller {
                 class: EditorjsList,
                 ...payload.list
             }
+        }
+
+        if (payload.marker) {
+            options.tools.marker = Marker;
         }
 
         if (payload.quote) {

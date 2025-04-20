@@ -125,6 +125,7 @@ class Editor
         $this->withChecklistTool();
         $this->withQuoteTool();
         $this->withListTool();
+        $this->withMarketTool();
         $this->withInlineCodeTool();
         $this->withTableTool();
 
@@ -157,6 +158,10 @@ class Editor
      */
     public function withHeaderTool(string $placeholder = '', array $levels = [], HeaderLevel $defaultLevel = HeaderLevel::H1): static
     {
+        if ([] === $levels) {
+            $levels = HeaderLevel::cases();
+        }
+
         $this->options['header'] = [
             'config' => [
                 'placeholder' => $placeholder,
@@ -196,6 +201,13 @@ class Editor
                 'defaultStyle' => $defaultStyle->value,
             ]
         ];
+
+        return $this;
+    }
+
+    public function withMarketTool(): static
+    {
+        $this->options['marker'] = true;
 
         return $this;
     }

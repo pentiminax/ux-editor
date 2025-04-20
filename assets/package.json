@@ -22,6 +22,7 @@
       "@editorjs/image": "^2.10.2",
       "@editorjs/inline-code": "^1.5.1",
       "@editorjs/list": "^2.0.6",
+      "@editorjs/marker": "^1.4.0",
       "@editorjs/quote": "^2.7.6",
       "@editorjs/table": "^2.4.4",
       "@hotwired/stimulus": "^3.0.0"
@@ -35,6 +36,7 @@
     "@editorjs/image": "^2.10.2",
     "@editorjs/inline-code": "^1.5.1",
     "@editorjs/list": "^2.0.6",
+    "@editorjs/marker": "^1.4.0",
     "@editorjs/quote": "^2.7.6",
     "@editorjs/table": "^2.4.4",
     "@hotwired/stimulus": "^3.0.0"
@@ -47,6 +49,7 @@
     "@editorjs/image": "^2.10.2",
     "@editorjs/inline-code": "^1.5.1",
     "@editorjs/list": "^2.0.6",
+    "@editorjs/marker": "^1.4.0",
     "@editorjs/quote": "^2.7.6",
     "@editorjs/table": "^2.4.4",
     "@hotwired/stimulus": "^3.0.0"
