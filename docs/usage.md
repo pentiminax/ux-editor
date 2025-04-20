@@ -9,6 +9,7 @@ use Pentiminax\UX\Editor\Model\Editor;
 use Pentiminax\UX\Editor\Model\Block\Paragraph;
 
 $editor = (new Editor('my-editor'))
+    ->withDefaultTools()
     ->holder('editor-container')
     ->autofocus(true)
     ->minHeight(300)
