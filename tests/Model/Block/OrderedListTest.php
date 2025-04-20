@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Block;
+namespace Pentiminax\UX\Editor\Tests\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\Block\OrderedList;
