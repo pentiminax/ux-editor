@@ -2,6 +2,7 @@
 
 namespace Model\Block;
 
+use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\Block\OrderedList;
 use Pentiminax\UX\Editor\Model\BlockData\ListData;
 use Pentiminax\UX\Editor\Model\BlockData\ListItem;
@@ -20,6 +21,8 @@ class OrderedListTest extends TestCase
             content: 'content',
             items: $items
         );
+
+        $this->assertEquals(BlockType::LIST, $block->getType());
 
         /** @var ListData $data */
         $data = $block->getData();

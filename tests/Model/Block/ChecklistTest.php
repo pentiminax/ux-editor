@@ -2,6 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Tests\Model\Block;
 
+use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\Block\Checklist;
 use Pentiminax\UX\Editor\Model\BlockData\ChecklistData;
 use Pentiminax\UX\Editor\Model\BlockData\ChecklistItem;
@@ -15,6 +16,8 @@ class ChecklistTest extends TestCase
             ChecklistItem::new('Item 1'),
             ChecklistItem::new('Item 2', true),
         );
+
+        $this->assertEquals(BlockType::CHECKLIST, $checklist->getType());
 
         /** @var ChecklistData $data */
         $data = $checklist->getData();
