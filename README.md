@@ -16,6 +16,10 @@ Install the library via Composer:
 ```console
 composer require pentiminax/ux-editor
 ```
+## Documentation
+- [Installation](https://github.com/pentiminax/ux-editor/blob/main/docs/installation.md)
+- [Usage](https://github.com/pentiminax/ux-editor/blob/main/docs/usage.md)
+
 ## Supported Blocks
 
 The following Editor.js blocks are supported:
