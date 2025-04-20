@@ -4,7 +4,7 @@ namespace Pentiminax\UX\Editor\Model\Block;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 
-interface BlockInterface
+interface BlockInterface extends \JsonSerializable
 {
     public function getData(): mixed;
 

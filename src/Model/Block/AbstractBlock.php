@@ -5,7 +5,7 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\BlockDataInterface;
 
-abstract class AbstractBlock implements BlockInterface, \JsonSerializable
+abstract class AbstractBlock implements BlockInterface
 {
     protected string $id;
 
@@ -48,7 +48,7 @@ abstract class AbstractBlock implements BlockInterface, \JsonSerializable
         while ($timestamp !== '0') {
             $remainder = bcmod($timestamp, '36');
             $timestampBase36 = $chars[(int)$remainder] . $timestampBase36;
-            $timestamp = bcdiv($timestamp, '36', 0);
+            $timestamp = bcdiv($timestamp, '36');
         }
 
         $randomPart = '';

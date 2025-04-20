@@ -15,4 +15,5 @@ enum BlockType: string
     case PARAGRAPH = 'paragraph';
     case RAW = 'raw';
     case TABLE = 'table';
+    case WARNING = 'warning';
 }

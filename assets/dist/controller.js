@@ -10,6 +10,7 @@ import Marker from '@editorjs/marker';
 import Quote from '@editorjs/quote';
 import Raw from '@editorjs/raw';
 import Table from '@editorjs/table';
+import Warning from '@editorjs/warning';
 
 class default_1 extends Controller {
     constructor() {
@@ -41,6 +42,19 @@ class default_1 extends Controller {
             ...payload,
         };
 
+        this.appendTools(payload, options);
+
+        this.editor = new EditorJS(options);
+        this.saveDataUrl = payload.saveDataUrl || null;
+
+        this.dispatchEvent('connect', {
+            editor: this.editor
+        });
+
+        this.isEditorInitialized = true;
+    }
+
+    appendTools(payload, options) {
         if (payload.checklist) {
             options.tools.checklist = Checklist;
         }
@@ -103,14 +117,12 @@ class default_1 extends Controller {
             }
         }
 
-        this.editor = new EditorJS(options);
-        this.saveDataUrl = payload.saveDataUrl || null;
-
-        this.dispatchEvent('connect', {
-            editor: this.editor
-        });
-
-        this.isEditorInitialized = true;
+        if (payload.warning) {
+            options.tools.warning = {
+                class: Warning,
+                ...payload.warning
+            }
+        }
     }
 
     dispatchEvent(name, payload) {

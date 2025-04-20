@@ -130,6 +130,7 @@ class Editor
         $this->withInlineCodeTool();
         $this->withRawTool();
         $this->withTableTool();
+        $this->withWarningTool();
 
         return $this;
     }
@@ -249,6 +250,18 @@ class Editor
                 'cols' => $cols,
                 'maxRows' => $maxRows,
                 'maxCols' => $maxCols,
+            ]
+        ];
+
+        return $this;
+    }
+
+    public function withWarningTool(string $titlePlaceholder = '', string $messagePlaceholder = ''): static
+    {
+        $this->options['warning'] = [
+            'config' => [
+                'titlePlaceholder' => $titlePlaceholder,
+                'messagePlaceholder' => $messagePlaceholder,
             ]
         ];
 
