@@ -31,6 +31,6 @@ The following Editor.js blocks are currently supported or planned:
 - [x] Marker  
 - [x] Paragraph  
 - [x] Quote  
-- [ ] Raw 
+- [x] Raw 
 - [x] Table  
 - [ ] Warning   
