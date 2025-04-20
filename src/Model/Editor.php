@@ -3,7 +3,6 @@
 namespace Pentiminax\UX\Editor\Model;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
-use Pentiminax\UX\Editor\Enum\EmbedService;
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 use Pentiminax\UX\Editor\Enum\ListStyle;
 use Pentiminax\UX\Editor\Model\Block\BlockInterface;

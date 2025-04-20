@@ -3,11 +3,10 @@
 namespace Pentiminax\UX\Editor\Model\BlockData;
 
 use Pentiminax\UX\Editor\Enum\EmbedService;
-
 use function preg_match;
 use function sprintf;
 
-class EmbedData implements BlockDataInterface, \JsonSerializable
+class EmbedData implements BlockDataInterface
 {
     public function __construct(
         public string $caption,

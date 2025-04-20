@@ -4,8 +4,6 @@ namespace Pentiminax\UX\Editor\Tests\Twig;
 
 use Pentiminax\UX\Editor\Kernel\TwigAppKernel;
 use Pentiminax\UX\Editor\Model\Editor;
-use Pentiminax\UX\Editor\Twig\EditorExtension;
-use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class EditorExtensionTest extends KernelTestCase
