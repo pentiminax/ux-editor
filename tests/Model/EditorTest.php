@@ -4,6 +4,7 @@ namespace Pentiminax\UX\Editor\Tests\Model;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\Editor;
+use Pentiminax\UX\Editor\Model\StandardEditor;
 use PHPUnit\Framework\TestCase;
 
 class EditorTest extends TestCase
@@ -35,11 +36,9 @@ class EditorTest extends TestCase
         ], $editor->getOptions());
     }
 
-    public function testEditorWithDefaultTools(): void
+    public function testStandardEditor(): void
     {
-        $editor = (new Editor())
-            ->withDefaultTools()
-        ;
+        $editor = new StandardEditor();
 
         $options = $editor->getOptions();
 

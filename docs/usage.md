@@ -5,11 +5,10 @@
 To use **UX Editor**, start by instantiating the `Editor` class in your Symfony controller or service:
 
 ```php
-use Pentiminax\UX\Editor\Model\Editor;
+use Pentiminax\UX\Editor\Model\StandardEditor;
 use Pentiminax\UX\Editor\Model\Block\Paragraph;
 
-$editor = (new Editor('my-editor'))
-    ->withDefaultTools()
+$editor = (new StandardEditor('my-editor'))
     ->holder('editor-container')
     ->autofocus(true)
     ->minHeight(300)
