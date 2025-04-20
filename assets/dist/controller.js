@@ -8,6 +8,7 @@ import InlineCode from '@editorjs/inline-code';
 import EditorjsList from '@editorjs/list';
 import Marker from '@editorjs/marker';
 import Quote from '@editorjs/quote';
+import Raw from '@editorjs/raw';
 import Table from '@editorjs/table';
 
 class default_1 extends Controller {
@@ -79,6 +80,13 @@ class default_1 extends Controller {
 
         if (payload.marker) {
             options.tools.marker = Marker;
+        }
+
+        if (payload.raw) {
+            options.tools.raw = {
+                class: Raw,
+                ...payload.raw
+            }
         }
 
         if (payload.quote) {

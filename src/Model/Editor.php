@@ -128,6 +128,7 @@ class Editor
         $this->withListTool();
         $this->withMarketTool();
         $this->withInlineCodeTool();
+        $this->withRawTool();
         $this->withTableTool();
 
         return $this;
@@ -219,6 +220,17 @@ class Editor
             'config' => [
                 'quotePlaceholder' => $quotePlaceholder,
                 'captionPlaceholder' => $captionPlaceholder,
+            ]
+        ];
+
+        return $this;
+    }
+
+    public function withRawTool(string $placeholder = ''): static
+    {
+        $this->options['raw'] = [
+            'config' => [
+                'placeholder' => $placeholder,
             ]
         ];
 

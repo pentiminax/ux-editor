@@ -13,5 +13,6 @@ enum BlockType: string
     case LIST = 'list';
     case MARKER = 'marker';
     case PARAGRAPH = 'paragraph';
+    case RAW = 'raw';
     case TABLE = 'table';
 }
