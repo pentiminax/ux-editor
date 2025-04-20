@@ -3,6 +3,7 @@
 namespace Pentiminax\UX\Editor\Model;
 
 use Pentiminax\UX\Editor\Enum\BlockType;
+use Pentiminax\UX\Editor\Enum\EditorLogLevel;
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 use Pentiminax\UX\Editor\Enum\ListStyle;
 use Pentiminax\UX\Editor\Model\Block\BlockInterface;
@@ -87,6 +88,13 @@ class Editor
     public function hideToolbar(bool $hideToolbar): static
     {
         $this->options['hideToolbar'] = $hideToolbar;
+
+        return $this;
+    }
+
+    public function logLevel(EditorLogLevel $logLevel): static
+    {
+        $this->options['logLevel'] = $logLevel->value;
 
         return $this;
     }

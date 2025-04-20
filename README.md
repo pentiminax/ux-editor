@@ -33,4 +33,4 @@ The following Editor.js blocks are currently supported or planned:
 - [x] Quote  
 - [x] Raw 
 - [x] Table  
-- [ ] Warning   
+- [x] Warning   
