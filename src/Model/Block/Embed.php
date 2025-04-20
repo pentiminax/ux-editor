@@ -19,13 +19,4 @@ class Embed extends AbstractBlock
     {
         return BlockType::EMBED;
     }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'id' => $this->id,
-            'type' => $this->getType()->value,
-            'data' => $this->data
-        ];
-    }
 }

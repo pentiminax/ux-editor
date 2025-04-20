@@ -19,13 +19,4 @@ class Checklist extends AbstractBlock
     {
         return BlockType::CHECKLIST;
     }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'id' => $this->id,
-            'type' => $this->getType()->value,
-            'data' => $this->data
-        ];
-    }
 }

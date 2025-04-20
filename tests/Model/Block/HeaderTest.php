@@ -2,6 +2,7 @@
 
 namespace Pentiminax\UX\Editor\Tests\Model\Block;
 
+use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 use Pentiminax\UX\Editor\Model\Block\Header;
 use Pentiminax\UX\Editor\Model\BlockData\HeaderData;
@@ -15,6 +16,8 @@ class HeaderTest extends TestCase
             text: 'Test Header',
             level: HeaderLevel::H1
         );
+
+        $this->assertEquals(BlockType::HEADER, $header->getType());
 
         /** @var HeaderData $data */
         $data = $header->getData();

@@ -19,13 +19,4 @@ class Header extends AbstractBlock
     {
         return BlockType::HEADER;
     }
-
-    public function jsonSerialize(): array
-    {
-        return [
-            'id' => $this->id,
-            'type' => $this->getType()->value,
-            'data' => $this->data
-        ];
-    }
 }
