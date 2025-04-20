@@ -5,6 +5,7 @@ namespace Pentiminax\UX\Editor\Enum;
 enum BlockType: string
 {
     case CHECKLIST = 'checklist';
+    case CODE = 'code';
     case EMBED = 'embed';
     case HEADER = 'header';
     case IMAGE = 'image';

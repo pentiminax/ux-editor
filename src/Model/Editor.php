@@ -119,6 +119,7 @@ class Editor
 
     public function withDefaultTools(): static
     {
+        $this->withCodeTool();
         $this->withEmbedTool();
         $this->withHeaderTool();
         $this->withChecklistTool();
@@ -132,6 +133,13 @@ class Editor
     public function withChecklistTool(): static
     {
         $this->options['checklist'] = true;
+
+        return $this;
+    }
+
+    public function withCodeTool(): static
+    {
+        $this->options['code'] = true;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pentiminax\UX\Editor\Kernel;
+namespace Pentiminax\UX\Editor\Tests\Kernel;
 
 use Pentiminax\UX\Editor\EditorBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;

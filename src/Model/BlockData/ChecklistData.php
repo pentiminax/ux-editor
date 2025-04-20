@@ -2,8 +2,6 @@
 
 namespace Pentiminax\UX\Editor\Model\BlockData;
 
-use Pentiminax\UX\Editor\Model\Block\Checklist;
-
 readonly class ChecklistData implements BlockDataInterface
 {
     /** @var ChecklistItem[]  */

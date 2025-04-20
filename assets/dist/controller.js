@@ -1,5 +1,6 @@
 import {Controller} from '@hotwired/stimulus';
 import Checklist from '@editorjs/checklist'
+import Code from '@editorjs/code'
 import Embed from '@editorjs/embed'
 import Header from '@editorjs/header';
 import Image from '@editorjs/image';
@@ -38,15 +39,15 @@ class default_1 extends Controller {
         };
 
         if (payload.checklist) {
-            options.tools.checklist = {
-                class: Checklist,
-            }
+            options.tools.checklist = Checklist;
+        }
+
+        if (payload.code) {
+            options.tools.code = Code;
         }
 
         if (payload.embed) {
-            options.tools.embed = {
-                class: Embed,
-            }
+            options.tools.embed = Embed;
         }
 
         if (payload.header) {

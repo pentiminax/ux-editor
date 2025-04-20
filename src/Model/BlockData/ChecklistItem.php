@@ -4,7 +4,6 @@ namespace Pentiminax\UX\Editor\Model\BlockData;
 
 readonly class ChecklistItem implements BlockDataInterface
 {
-
     private function __construct(
         public string $text,
         public bool $checked = false

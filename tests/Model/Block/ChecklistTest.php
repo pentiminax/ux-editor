@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class ChecklistTest extends TestCase
 {
-    public function testChecklist()
+    public function testChecklist(): void
     {
         $checklist = Checklist::new(
             ChecklistItem::new('Item 1'),
