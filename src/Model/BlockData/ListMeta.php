@@ -14,7 +14,7 @@ class ListMeta implements \JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'counterType' => $this->counterType,
+            'counterType' => $this->counterType->value,
         ];
     }
 }
