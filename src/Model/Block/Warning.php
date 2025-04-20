@@ -5,11 +5,11 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\WarningData;
 
-class Warning extends AbstractBlock
+final class Warning extends AbstractBlock
 {
-    public static function new(string $title, string $message): static
+    public static function new(string $title, string $message): self
     {
-        return new static(
+        return new self(
             data: new WarningData(
                 title: $title,
                 message: $message

@@ -5,7 +5,7 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\ImageData;
 
-class Image extends AbstractBlock
+final class Image extends AbstractBlock
 {
     public static function new(
         string $file,
@@ -13,8 +13,8 @@ class Image extends AbstractBlock
         bool $stretched = false,
         bool $withBackground = false,
         bool $withBorder = false,
-    ): static {
-        return new static(
+    ): self {
+        return new self(
             new ImageData(
                 file: $file,
                 caption: $caption,

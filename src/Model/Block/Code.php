@@ -5,11 +5,11 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\CodeData;
 
-class Code extends AbstractBlock
+final class Code extends AbstractBlock
 {
-    public static function new(string $code): static
+    public static function new(string $code): self
     {
-        return new static(
+        return new self(
             data: new CodeData($code)
         );
     }

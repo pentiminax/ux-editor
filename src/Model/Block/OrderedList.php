@@ -9,14 +9,14 @@ use Pentiminax\UX\Editor\Model\BlockData\ListData;
 use Pentiminax\UX\Editor\Model\BlockData\ListItem;
 use Pentiminax\UX\Editor\Model\BlockData\ListMeta;
 
-class OrderedList extends AbstractBlock
+final class OrderedList extends AbstractBlock
 {
     /**
      * @param ListItem[] $items
      */
-    public static function new(string $content, array $items = []): static
+    public static function new(string $content, array $items = []): self
     {
-        return new static(
+        return new self(
             new ListData(
                 content: $content,
                 items: $items,

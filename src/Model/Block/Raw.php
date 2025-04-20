@@ -5,11 +5,11 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\RawData;
 
-class Raw extends AbstractBlock
+final class Raw extends AbstractBlock
 {
-    public static function new(string $html): static
+    public static function new(string $html): self
     {
-        return new static(
+        return new self(
             data: new RawData(
                 html: $html,
             ),

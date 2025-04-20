@@ -5,15 +5,15 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\ParagraphData;
 
-class Paragraph extends AbstractBlock
+final class Paragraph extends AbstractBlock
 {
-    public static function new(string $text, bool $inlineCode = false, bool $marker = false): static
+    public static function new(string $text, bool $inlineCode = false, bool $marker = false): self
     {
         if ($inlineCode && $marker) {
             throw new \InvalidArgumentException('You cannot set both $inlineCode and $marker to true.');
         }
 
-        return new static(
+        return new self(
             data: new ParagraphData(
                 text: $text,
                 inlineCode: $inlineCode,

@@ -7,14 +7,14 @@ use Pentiminax\UX\Editor\Enum\ListStyle;
 use Pentiminax\UX\Editor\Model\BlockData\ListData;
 use Pentiminax\UX\Editor\Model\BlockData\ListItem;
 
-class UnorderedList extends AbstractBlock
+final class UnorderedList extends AbstractBlock
 {
     /**
      * @param ListItem[] $items
      */
-    public static function new(string $content, array $items = []): static
+    public static function new(string $content, array $items = []): self
     {
-        return new static(
+        return new self(
             new ListData($content, $items, ListStyle::UNORDERED)
         );
     }

@@ -6,11 +6,11 @@ use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Enum\HeaderLevel;
 use Pentiminax\UX\Editor\Model\BlockData\HeaderData;
 
-class Header extends AbstractBlock
+final class Header extends AbstractBlock
 {
-    public static function new(string $text, HeaderLevel $level): static
+    public static function new(string $text, HeaderLevel $level): self
     {
-        return new static(
+        return new self(
             new HeaderData($text, $level)
         );
     }

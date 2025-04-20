@@ -5,11 +5,11 @@ namespace Pentiminax\UX\Editor\Model\Block;
 use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\DelimiterData;
 
-class Delimiter extends AbstractBlock
+final class Delimiter extends AbstractBlock
 {
-    public static function new(): static
+    public static function new(): self
     {
-        return new static(
+        return new self(
             data: new DelimiterData(),
         );
     }

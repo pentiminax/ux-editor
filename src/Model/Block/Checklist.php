@@ -6,11 +6,11 @@ use Pentiminax\UX\Editor\Enum\BlockType;
 use Pentiminax\UX\Editor\Model\BlockData\ChecklistData;
 use Pentiminax\UX\Editor\Model\BlockData\ChecklistItem;
 
-class Checklist extends AbstractBlock
+final class Checklist extends AbstractBlock
 {
-    public static function new(ChecklistItem ...$items): static
+    public static function new(ChecklistItem ...$items): self
     {
-        return new static(
+        return new self(
             new ChecklistData(...$items)
         );
     }
