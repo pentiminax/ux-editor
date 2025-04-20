@@ -13,11 +13,6 @@ class EditorBundle extends AbstractBundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->services()
-            ->load('Pentiminax\\UX\\Editor\\Repository\\', '../src/Repository/*')
-            ->autowire()
-            ->autoconfigure();
-
-        $container->services()
             ->set('editor.twig_extension', Twig\EditorExtension::class)
             ->arg(0, new Reference('stimulus.helper'))
             ->tag('twig.extension')
