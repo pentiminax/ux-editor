@@ -7,10 +7,18 @@ use Pentiminax\UX\Editor\Model\BlockData\ParagraphData;
 
 class Paragraph extends AbstractBlock
 {
-    public static function new(string $text): static
+    public static function new(string $text, bool $inlineCode = false, bool $marker = false): static
     {
+        if ($inlineCode && $marker) {
+            throw new \InvalidArgumentException('You cannot set both $inlineCode and $marker to true.');
+        }
+
         return new static(
-            new ParagraphData($text)
+            data: new ParagraphData(
+                text: $text,
+                inlineCode: $inlineCode,
+                marker: $marker
+            )
         );
     }
 

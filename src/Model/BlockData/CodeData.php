@@ -2,10 +2,10 @@
 
 namespace Pentiminax\UX\Editor\Model\BlockData;
 
-class CodeData implements BlockDataInterface
+readonly class CodeData implements BlockDataInterface
 {
     public function __construct(
-        protected string $code,
+        public string $code,
     ) {
     }
 
