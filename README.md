@@ -18,10 +18,6 @@ composer require pentiminax/ux-editor
 ```
 ## Supported Blocks
 
-The following Editor.js blocks are currently supported:
-
-## Supported Blocks
-
 The following Editor.js blocks are currently supported or planned:
 
 - [x] Checklist  
