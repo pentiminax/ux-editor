@@ -10,8 +10,6 @@ The `Embed` block allows you to include media content from third-party platforms
 - Service: Determines the external service used for embedding, such as YOUTUBE, TWITTER, or GITHUB.
 - Width: Specifies the width of the embedded player in pixels.
 
-Use the static `new` method to create an `Embed` block:
-
 ## Usage
 
 You can create a new emmbed block using the `Embed::new()` static constructor:
