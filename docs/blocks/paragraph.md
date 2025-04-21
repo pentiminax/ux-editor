@@ -25,6 +25,7 @@ $block = Paragraph::new('This will be highlighted as code.', inlineCode: true);
 
 // Marked text
 $block = Paragraph::new('This will be marked.', marker: true);
+```
 
 ⚠️ Note: You cannot set both inlineCode and marker to true. This will throw an InvalidArgumentException.
 
