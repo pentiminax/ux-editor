@@ -45,7 +45,7 @@ class Editor
 
     /**
      * Previously saved blocks that should be rendered
-     * @var BlockInterface[] $blocks
+     * @param BlockInterface[] $blocks
      */
     public function blocks(array $blocks): static
     {

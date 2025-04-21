@@ -4,11 +4,11 @@ namespace Pentiminax\UX\Editor\Model\BlockData;
 
 readonly class ChecklistData implements BlockDataInterface
 {
-    /** @var ChecklistItem[]  */
+    /** @var ChecklistItem[] $items */
     public array $items;
 
     /**
-     * @param ChecklistItem[] $items
+     * @param ChecklistItem ...$items
      */
     public function __construct(ChecklistItem ...$items)
     {
