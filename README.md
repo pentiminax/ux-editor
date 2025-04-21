@@ -20,6 +20,12 @@ composer require pentiminax/ux-editor
 - [Installation](https://github.com/pentiminax/ux-editor/blob/main/docs/installation.md)
 - [Usage](https://github.com/pentiminax/ux-editor/blob/main/docs/usage.md)
 
+## Load Editor.js library
+You must include the Editor.js library in your frontend, for example by adding the following script tag:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+```
+
 ## Supported Blocks
 
 The following Editor.js blocks are supported:
