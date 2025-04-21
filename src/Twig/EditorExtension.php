@@ -32,7 +32,7 @@ class EditorExtension extends AbstractExtension
         }
 
         $controllers['@pentiminax/ux-editor/editor'] = [
-            'view' => $editor->getOptions()
+            'view' => empty($editor->getOptions())? '{}' : $editor->getOptions()
         ];
 
         $stimulusAttributes = $this->stimulus->createStimulusAttributes();
