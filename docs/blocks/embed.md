@@ -4,11 +4,13 @@ The `Embed` block allows you to include media content from third-party platforms
 
 ## Features
 
-Use the static `new` method to create an `Embed` block:
+- Caption: Allows the user to provide a caption for the embedded content.
+- URL: Specifies the URL of the content to embed (such as a YouTube video, a GitHub gist, or a Twitter post).
+- Height: Defines the height of the embedded player in pixels.
+- Service: Determines the external service used for embedding, such as YOUTUBE, TWITTER, or GITHUB.
+- Width: Specifies the width of the embedded player in pixels.
 
-```php
-Embed::new(string $caption, string $url, int $height, EmbedService $service, int $width): Embed
-```
+Use the static `new` method to create an `Embed` block:
 
 ## Usage
 
