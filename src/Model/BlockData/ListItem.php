@@ -2,8 +2,6 @@
 
 namespace Pentiminax\UX\Editor\Model\BlockData;
 
-use Pentiminax\UX\Editor\Model\Block\Block;
-
 class ListItem implements BlockDataInterface
 {
     public function __construct(
@@ -14,11 +12,11 @@ class ListItem implements BlockDataInterface
     ) {
     }
 
-    public static function new(string $content, array $items = [], ?ListMeta $meta = null): static
+    public static function new(string $content, array $items = [], ?ListMeta $meta = null): self
     {
         $meta = $meta ?? new ListMeta();
 
-        return new static($content, $items, $meta);
+        return new self($content, $items, $meta);
     }
 
     public function jsonSerialize(): array

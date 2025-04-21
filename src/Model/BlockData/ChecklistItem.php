@@ -10,9 +10,9 @@ readonly class ChecklistItem implements BlockDataInterface
     ) {
     }
 
-    public static function new(string $text, bool $checked = false): static
+    public static function new(string $text, bool $checked = false): self
     {
-        return new static(
+        return new self(
             $text,
             $checked
         );

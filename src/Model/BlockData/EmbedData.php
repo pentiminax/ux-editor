@@ -50,7 +50,7 @@ class EmbedData implements BlockDataInterface
     private function handleTwitterEmbed(string $embed): string
     {
         if (preg_match('/x\.com\/.*\/status\/([0-9]+)/', $embed, $matches)) {
-            return sprintf('https://platform.twitter.com/embed/Tweet.html?id=%s', $matches[1], $embed);
+            return sprintf('https://platform.twitter.com/embed/Tweet.html?id=%s', $matches[1]);
         }
 
         return $embed;
