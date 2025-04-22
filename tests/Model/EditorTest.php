@@ -23,6 +23,7 @@ class EditorTest extends TestCase
         ;
 
         $this->assertSame([
+            'holder' => 'editorjs',
             'autofocus' => true,
             'data' => [
                 'blocks' => [],

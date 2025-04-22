@@ -19,7 +19,7 @@ class EditorExtensionTest extends KernelTestCase
         $rendered = $container->get('test.editor.twig_extension')->renderEditor(new Editor());
 
         $this->assertSame(
-            '<div id="editorjs" data-controller="pentiminax--ux-editor--editor" data-pentiminax--ux-editor--editor-view-value="{}"></div>',
+            '<div id="editorjs" data-controller="pentiminax--ux-editor--editor" data-pentiminax--ux-editor--editor-view-value="{&quot;holder&quot;:&quot;editorjs&quot;}"></div>',
             $rendered
         );
     }
