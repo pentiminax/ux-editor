@@ -8,11 +8,10 @@ To use **UX Editor**, start by instantiating the `Editor` class in your Symfony 
 use Pentiminax\UX\Editor\Model\StandardEditor;
 use Pentiminax\UX\Editor\Model\Block\Paragraph;
 
-$editor = (new StandardEditor('my-editor'))
-    ->holder('editor-container')
+$editor = (new StandardEditor('editor-container'))
     ->autofocus(true)
     ->minHeight(300)
-    ->addBlock(Paragraph::new('Welcome to Editor.js!', HeaderLevel:H1));
+    ->addBlock(Paragraph::new('Welcome to Editor.js!'));
 ```
 
 ## Rendering in Twig
