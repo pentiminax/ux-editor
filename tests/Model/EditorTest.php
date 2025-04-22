@@ -18,12 +18,12 @@ class EditorTest extends TestCase
             ->hideToolbar(true)
             ->inlineToolbar(true)
             ->minHeight(100)
-            ->holder('holderId')
+            ->holder('holder')
             ->readonly(true)
         ;
 
         $this->assertSame([
-            'holder' => 'editorjs',
+            'holder' => 'holder',
             'autofocus' => true,
             'data' => [
                 'blocks' => [],
