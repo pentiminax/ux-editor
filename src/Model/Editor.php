@@ -17,6 +17,7 @@ class Editor
     public function __construct(
         private readonly string $id = 'editorjs'
     ) {
+        $this->holder($this->id);
     }
 
     /**
