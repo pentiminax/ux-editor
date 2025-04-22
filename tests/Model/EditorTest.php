@@ -32,7 +32,6 @@ class EditorTest extends TestCase
             'hideToolbar' => true,
             'inlineToolbar' => true,
             'minHeight' => 100,
-            'holder' => 'holderId',
             'readOnly' => true,
         ], $editor->getOptions());
     }
