@@ -16,16 +16,16 @@ Install the library via Composer:
 ```console
 composer require pentiminax/ux-editor
 ```
-## Documentation
-- [Installation](https://github.com/pentiminax/ux-editor/blob/main/docs/installation.md)
-- [Usage](https://github.com/pentiminax/ux-editor/blob/main/docs/usage.md)
-- [Data Persistence](https://github.com/pentiminax/ux-editor/blob/main/docs/data-persistence.md)
 
-## Load Editor.js library
 You must include the Editor.js library in your frontend, for example by adding the following script tag:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 ```
+
+## Documentation
+- [Installation](https://github.com/pentiminax/ux-editor/blob/main/docs/installation.md)
+- [Usage](https://github.com/pentiminax/ux-editor/blob/main/docs/usage.md)
+- [Data Persistence](https://github.com/pentiminax/ux-editor/blob/main/docs/data-persistence.md)
 
 ## Supported Blocks
 
