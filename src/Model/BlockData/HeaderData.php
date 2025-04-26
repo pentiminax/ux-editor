@@ -12,6 +12,9 @@ class HeaderData implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @return array{level: int, text: string}
+     */
     public function jsonSerialize(): array
     {
         return [

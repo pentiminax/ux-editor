@@ -10,8 +10,22 @@ use Pentiminax\UX\Editor\Model\Block\BlockInterface;
 
 class Editor
 {
+    /**
+     * @var array<string, mixed> $attributes
+     */
     private array $attributes = [];
 
+    /**
+     * @var array{
+     *  holder?: string,
+     *  autofocus?: bool,
+     *  data?: array{blocks: BlockInterface[]},
+     *  defaultBlock?: string,
+     *  minHeight?: int,
+     *  inlineToolbar?: bool,
+     *  readOnly?: bool,
+     * } $options
+     */
     private array $options = [];
 
     public function __construct(
@@ -119,11 +133,17 @@ class Editor
         return $this->id;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getAttributes(): array
     {
         return $this->attributes;
     }
 
+    /**
+     * @param array<string, mixed> $attributes
+     */
     public function setAttributes(array $attributes): static
     {
         $this->attributes = $attributes;
@@ -133,9 +153,18 @@ class Editor
 
     public function getDataController(): ?string
     {
-        return $this->attributes['data-controller'] ?? null;
+        if (isset($this->attributes['data-controller'])
+            && is_string($this->attributes['data-controller'])
+        ) {
+            return $this->attributes['data-controller'];
+        }
+
+        return null;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getOptions(): array
     {
         return $this->options;

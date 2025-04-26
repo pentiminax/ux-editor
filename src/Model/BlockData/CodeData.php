@@ -9,6 +9,9 @@ readonly class CodeData implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @return array{code: string}
+     */
     public function jsonSerialize(): array
     {
         return [

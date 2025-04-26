@@ -15,6 +15,9 @@ readonly class ChecklistData implements BlockDataInterface
         $this->items = $items;
     }
 
+    /**
+     * @return array{items: ChecklistItem[]}
+     */
     public function jsonSerialize(): array
     {
         return [

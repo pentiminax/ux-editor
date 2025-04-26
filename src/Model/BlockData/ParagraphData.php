@@ -14,6 +14,9 @@ readonly class ParagraphData implements BlockDataInterface
         }
     }
 
+    /**
+     * @return array{text: string}
+     */
     public function jsonSerialize(): array
     {
         if ($this->inlineCode) {
