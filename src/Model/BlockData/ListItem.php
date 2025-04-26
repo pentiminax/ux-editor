@@ -12,6 +12,9 @@ class ListItem implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @param ListItem[] $items
+     */
     public static function new(string $content, array $items = [], ?ListMeta $meta = null): self
     {
         $meta = $meta ?? new ListMeta();
@@ -19,6 +22,9 @@ class ListItem implements BlockDataInterface
         return new self($content, $items, $meta);
     }
 
+    /**
+     * @return array{content: string, items: ListItem[], meta: ListMeta}
+     */
     public function jsonSerialize(): array
     {
         return [

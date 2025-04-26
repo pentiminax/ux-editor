@@ -4,7 +4,9 @@ namespace Pentiminax\UX\Editor\Tests\Twig;
 
 use Pentiminax\UX\Editor\Model\Editor;
 use Pentiminax\UX\Editor\Tests\Kernel\TwigAppKernel;
+use Pentiminax\UX\Editor\Twig\EditorExtension as TwigEditorExtension;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class EditorExtensionTest extends KernelTestCase
 {
@@ -14,9 +16,13 @@ class EditorExtensionTest extends KernelTestCase
 
         $kernel->boot();
 
+        /** @var ContainerInterface $container */
         $container = $kernel->getContainer()->get('test.service_container');
 
-        $rendered = $container->get('test.editor.twig_extension')->renderEditor(new Editor());
+        $twigExtension = $container->get('test.editor.twig_extension');
+        $this->assertInstanceOf(TwigEditorExtension::class, $twigExtension);
+
+        $rendered = $twigExtension->renderEditor(new Editor());
 
         $this->assertSame(
             '<div id="editorjs" data-controller="pentiminax--ux-editor--editor" data-pentiminax--ux-editor--editor-view-value="{&quot;holder&quot;:&quot;editorjs&quot;}"></div>',

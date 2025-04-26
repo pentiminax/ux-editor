@@ -23,6 +23,9 @@ abstract class AbstractBlock implements BlockInterface
         return $this->data;
     }
 
+    /**
+     * @return array{data: BlockDataInterface, type: string}
+     */
     public function jsonSerialize(): array
     {
         return [

@@ -22,6 +22,15 @@ class EmbedData implements BlockDataInterface
         };
     }
 
+    /**
+     * @return array{
+     *  caption: string,
+     *  embed: string,
+     *  height: int,
+     *  service: string,
+     *  width: int
+     * }
+     */
     public function jsonSerialize(): array
     {
         return [

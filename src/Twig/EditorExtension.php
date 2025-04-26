@@ -21,6 +21,9 @@ class EditorExtension extends AbstractExtension
         ];
     }
 
+    /**
+     * @param array<string, mixed> $attributes
+     */
     public function renderEditor(Editor $editor, array $attributes = []): string
     {
         $editor->setAttributes(array_merge($editor->getAttributes(), $attributes));
@@ -47,7 +50,7 @@ class EditorExtension extends AbstractExtension
 
             if (true === $value) {
                 $stimulusAttributes->addAttribute($name, $name);
-            } elseif (false !== $value) {
+            } elseif (false !== $value && is_string($value)) {
                 $stimulusAttributes->addAttribute($name, $value);
             }
         }

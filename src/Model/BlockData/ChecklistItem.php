@@ -19,6 +19,9 @@ readonly class ChecklistItem implements BlockDataInterface
     }
 
 
+    /**
+     * @return array{checked: bool, text: string}
+     */
     public function jsonSerialize(): array
     {
         return [

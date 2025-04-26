@@ -10,6 +10,9 @@ readonly class WarningData implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @return array{message: string, title: string}
+     */
     public function jsonSerialize(): array
     {
         return [

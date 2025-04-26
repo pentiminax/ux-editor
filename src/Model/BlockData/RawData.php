@@ -9,6 +9,9 @@ readonly class RawData implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @return array{html: string}
+     */
     public function jsonSerialize(): array
     {
         return [

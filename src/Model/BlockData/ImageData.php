@@ -13,6 +13,15 @@ class ImageData implements BlockDataInterface
     ) {
     }
 
+    /**
+     * @return array{
+     *  caption: string,
+     *  file: array{url: string},
+     *  stretched: bool,
+     *  withBackground: bool,
+     *  withBorder: bool
+     * }
+     */
     public function jsonSerialize(): array
     {
         return [

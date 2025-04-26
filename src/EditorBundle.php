@@ -10,6 +10,9 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class EditorBundle extends AbstractBundle
 {
+    /**
+     * @param array<string, mixed> $config
+     */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->services()
@@ -41,10 +44,17 @@ class EditorBundle extends AbstractBundle
         }
 
         $bundlesMetadata = $builder->getParameter('kernel.bundles_metadata');
-        if (!isset($bundlesMetadata['FrameworkBundle'])) {
+        if (
+            !is_array($bundlesMetadata)
+            || !is_array($bundlesMetadata['FrameworkBundle'])
+            || !isset($bundlesMetadata['FrameworkBundle']['path'])
+            || !is_string($bundlesMetadata['FrameworkBundle']['path'])
+        ) {
             return false;
         }
 
-        return is_file($bundlesMetadata['FrameworkBundle']['path'].'/Resources/config/asset_mapper.php');
+        $bundlePath = $bundlesMetadata['FrameworkBundle']['path'];
+
+        return is_file($bundlePath.'/Resources/config/asset_mapper.php');
     }
 }
